@@ -1,18 +1,29 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createStackNavigator } from '@react-navigation/stack'
 
 import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
 import Icon2 from 'react-native-vector-icons/Ionicons'
 
 import GroupList from './screens/GroupList'
+import ActivityList from './screens/ActivityList'
 
 const Tab = createBottomTabNavigator()
+const Stack = createStackNavigator()
 
-export default props => {
+const ActivityNavigator = props => {
     return (
-        <NavigationContainer>
-            <Tab.Navigator tabBarOptions={{ showLabel: false/*, activeTintColor: '#00d9e7', inactiveTintColor: '#000'*/}}
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
+            <Stack.Screen name='Grupos' component={GroupList} />
+            <Stack.Screen name='Atividades' component={ActivityList} />
+        </Stack.Navigator>
+    )
+}
+
+const MenuNavigator = props => {
+    return (
+            <Tab.Navigator tabBarOptions={{ showLabel: false}}
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName
@@ -37,10 +48,19 @@ export default props => {
                         return icon
                     }
                 })}>
-                <Tab.Screen name='Grupos' component={GroupList} />
+                <Tab.Screen name='Grupos' component={ActivityNavigator} />
                 <Tab.Screen name='Minhas atividades' component={GroupList} />
                 <Tab.Screen name='Notificações' component={GroupList} />
             </Tab.Navigator>
+    )
+}
+
+const Navigator = () => {
+    return (
+        <NavigationContainer>
+            <MenuNavigator />
         </NavigationContainer>
     )
 }
+
+export default Navigator

@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 export default class Group extends React.Component {
     render() {
         return (
-            <TouchableHighlight style={styles.container}>
+            <TouchableHighlight style={styles.container} onPress={() => {this.props.openActivities()}}>
                 <View style={styles.button}>
                     <Icon name={this.props.iconName} size={70} />
                     <Text style={styles.title}>{this.props.name}</Text>

@@ -6,6 +6,11 @@ import Group from '../components/Group'
 import Groups from '../Groups'
 
 export default class GroupList extends Component {
+
+    openActivities = props => {
+        this.props.navigation.navigate('Atividades')
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -17,7 +22,7 @@ export default class GroupList extends Component {
                         keyExtractor={item => `${item.id}`}
                         numColumns={2}
                         renderItem={({ item }) =>
-                            <Group key={item.id} {...item} />} />
+                            <Group key={item.id} {...item} openActivities={() => {this.openActivities()}} />} />
                 </View>
             </View>
         )
