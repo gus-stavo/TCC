@@ -40,10 +40,10 @@ export default class Auth extends Component {
                             style={styles.input} onChangeText={name => this.setState({ name })} />
                     }
 
-                    <AuthInput icon='at' placeholder={this.state.forgotPwd ? 'Informe seu e-mail' : 'E-mail'}  value={this.state.email}
+                    <AuthInput icon='at' placeholder={this.state.stageForgotPwd ? 'Informe seu e-mail' : 'E-mail'}  value={this.state.email}
                         style={styles.input} onChangeText={email => this.setState({ email })} />
 
-                    {!this.state.forgotPwd &&
+                    {!this.state.stageForgotPwd &&
                         <AuthInput icon='lock' placeholder='Senha' value={this.state.password}
                             style={styles.input} onChangeText={password => this.setState({password})} 
                             secureTextEntry={true} />
@@ -59,13 +59,13 @@ export default class Auth extends Component {
                     <TouchableOpacity onPress={this.signinOrSignup}>
                         <View style={styles.button}>
                             <Text style={styles.buttonText}>
-                                {this.state.stageNewUser ? 'Registrar' : (this.state.forgotPwd ? 'Confirmar' : 'Entrar')}
+                                {this.state.stageNewUser ? 'Registrar' : (this.state.stageForgotPwd ? 'Confirmar' : 'Entrar')}
                             </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
                 <View>
-                    {(!this.state.forgotPwd && !this.state.stageNewUser) &&
+                    {(!this.state.stageForgotPwd && !this.state.stageNewUser) &&
                         <View style={styles.textButtons}>
                             <View style={styles.textButton}>
                                 <TouchableOpacity onPress={() => this.setState({stageNewUser: !this.state.stageNewUser})}>
@@ -75,7 +75,7 @@ export default class Auth extends Component {
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.textButton}>
-                                <TouchableOpacity onPress={() => this.setState({forgotPwd: !this.state.forgotPwd})}>
+                                <TouchableOpacity onPress={() => this.setState({stageForgotPwd: !this.state.stageForgotPwd})}>
                                     <Text style={styles.textButtonTitle}>
                                         Esqueceu a senha?
                                     </Text>
@@ -83,11 +83,11 @@ export default class Auth extends Component {
                             </View>
                         </View>
                     }
-                    {(this.state.forgotPwd || this.state.stageNewUser) &&
+                    {(this.state.stageForgotPwd || this.state.stageNewUser) &&
                         <View style={styles.textButtons}>
                             <View style={styles.textButton}>
                                 <TouchableOpacity onPress={() => {
-                                    if (this.state.forgotPwd) this.setState({ forgotPwd: !this.state.forgotPwd })
+                                    if (this.state.stageForgotPwd) this.setState({ stageForgotPwd: !this.state.stageForgotPwd })
                                     if (this.state.stageNewUser) this.setState({ stageNewUser: !this.state.stageNewUser })
                                     }}>
                                     <Text style={styles.textButtonTitle}>
@@ -108,13 +108,13 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#00d9e7'
+        backgroundColor: 'rgba(111, 222, 552, 1)'
     },
     title: {
         fontSize: 70,
         marginBottom: 10,
         fontFamily: "Exo2-SemiBoldItalic",
-        color: '#222'
+        color: '#222',
     },
     formContainer: {
         backgroundColor: '#eee',
@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     button: {
-        backgroundColor: '#00d9e7',
+        backgroundColor: 'rgba(111, 222, 552, 1)',
         marginTop: 20,
         marginBottom: 10,
         padding: 10,

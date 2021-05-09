@@ -1,17 +1,17 @@
 import React from 'react'
-import { View, Text, StyleSheet, TouchableHighlight, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, TouchableHighlight, TouchableOpacity, Dimensions } from 'react-native'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default class Group extends React.Component {
     render() {
         return (
-            <TouchableHighlight style={styles.container} onPress={() => {this.props.openActivities()}}>
+            <TouchableOpacity style={styles.container} onPress={() => {this.props.openActivities()}}>
                 <View style={styles.button}>
                     <Icon name={this.props.iconName} size={70} />
                     <Text style={styles.title}>{this.props.name}</Text>
                 </View>
-            </TouchableHighlight> 
+            </TouchableOpacity> 
         )
     }
 }

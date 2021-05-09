@@ -36,6 +36,6 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: '#00d9e7'
+        backgroundColor: 'rgba(111, 222, 552, 1)'
     }
 })
