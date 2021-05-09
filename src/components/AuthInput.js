@@ -1,5 +1,5 @@
 import React from 'react'
-import{View, TextInput, StyleSheet} from 'react-native'
+import{ View, TextInput, StyleSheet } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default props =>{
@@ -11,14 +11,16 @@ export default props =>{
     )
 }
 
-const styles = StyleSheet.create ({
-    container :{
+const styles = StyleSheet.create({
+    container:{
         width:'100%',
         height:40,
-        backgroundColor:'#EEE',
+        backgroundColor:'#eee',
         borderRadius:20,
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        borderWidth: 1,
+        elevation: 3,
     },
     icon:{
         color:'#222',
@@ -26,6 +28,6 @@ const styles = StyleSheet.create ({
     },
     input:{
         marginLeft:20,
-        width:'70%',
+        width:'100%',
     }
 })
