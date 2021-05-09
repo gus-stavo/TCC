@@ -29,6 +29,8 @@ const styles = StyleSheet.create({
         flex: 1
     },
     list: {
-        flex: 1
+        flex: 1,
+        alignItems: 'center',
+        backgroundColor: '#00d9e7'
     }
 })
