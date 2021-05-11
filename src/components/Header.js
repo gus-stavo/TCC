@@ -11,25 +11,25 @@ export default class Header extends React.Component {
                     <Text style={styles.title}>{this.props.name}</Text>
                 </View>
                 <View style={styles.button}>
-                    <TouchableOpacity>
-                        <Icon name='navicon' size={50} /> 
+                    <TouchableOpacity onPress={() => {this.props.openDrawer()}}>
+                        <Icon name='navicon' size={50} color='#222' /> 
                     </TouchableOpacity>
                 </View>    
             </View>
-    
         )
     }
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#FFF',
+        backgroundColor: '#eee',
         padding: 5,
         borderBottomWidth: 1,
-        borderColor: '#BBB',
+        borderColor: '#222',
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
+        elevation: 5
     },
     containerTitle: {
         justifyContent: 'center',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
         
     },
     title:{
-        color: '#000',
+        color: '#222',
         fontFamily: 'Exo2-SemiBold',
         fontSize: 30,
         padding: 5,

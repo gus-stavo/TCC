@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, FlatList, StyleSheet } from 'react-native'
+import { View, FlatList, StyleSheet } from 'react-native'
 
 import Header from '../components/Header'
 import Group from '../components/Group'
@@ -11,11 +11,15 @@ export default class GroupList extends Component {
         this.props.navigation.navigate('Atividades')
     }
 
+    openDrawer = props => {
+        this.props.navigation.openDrawer()
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <View >
-                    <Header name={this.props.route.name}/>
+                    <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
                 </View>
                 <View style={styles.list}>
                     <FlatList data={Groups}

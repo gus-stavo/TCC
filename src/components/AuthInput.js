@@ -20,6 +20,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         alignItems:'center',
         borderWidth: 1,
+        borderColor:'#222',
         elevation: 3,
     },
     icon:{
@@ -29,5 +30,6 @@ const styles = StyleSheet.create({
     input:{
         marginLeft:20,
         width:'100%',
+        color: '#222',
     }
 })

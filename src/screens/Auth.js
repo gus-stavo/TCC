@@ -123,13 +123,15 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         alignItems: 'center',
         borderWidth: 1,
+        borderColor: '#222',
         elevation: 8,
     },
     subTitle: {
         fontSize: 20,
         textAlign: 'center',
         color: '#222',
-        marginBottom: 10
+        marginBottom: 10,
+        fontFamily: 'Exo2-Medium'
     },
     input: {
         marginTop: 10,
@@ -141,13 +143,15 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         borderRadius: 10,
+        borderColor: '#222',
         width: 150,
         borderWidth: 1,
         elevation: 5
     },
     buttonText: {
-        color: 'black',
-        fontSize: 20
+        color: '#222',
+        fontSize: 20,
+        fontFamily: 'Exo2-Medium'
     },
     textButtons: {
         alignItems: 'center',
@@ -159,6 +163,8 @@ const styles = StyleSheet.create({
         
     },
     textButtonTitle: {
-        fontSize: 17,
+        fontSize: 20,
+        fontFamily: 'Exo2-Medium',
+        color: '#222',
     }  
 })
