@@ -11,6 +11,8 @@ import Icon2 from 'react-native-vector-icons/Ionicons'
 import GroupList from './screens/GroupList'
 import ActivityList from './screens/ActivityList'
 
+import Menu from './screens/Menu'
+
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -64,7 +66,7 @@ const ScreenNavigator = props => {
             drawerPosition='right' 
             drawerStyle={{
                 backgroundColor: '#eee',
-                height: '30%',
+                height: 275,
                 borderRadius: 10,
                 borderColor: '#222',
                 borderWidth: 1,
@@ -75,12 +77,12 @@ const ScreenNavigator = props => {
                 labelStyle:{
                     color:'#222',
                     fontFamily:'Exo2-Medium',
-                }
-            }}>
+                },
+            }}
+            drawerContent={(props) => <Menu {...props} />}>
             <Drawer.Screen name='Home' component={MenuNavigator} />
             <Drawer.Screen name='Configurações' component={GroupList} />
             <Drawer.Screen name='Contate-nos' component={GroupList} />
-            <Drawer.Screen name='Sair' component={GroupList} />
         </Drawer.Navigator>
     )
 }

@@ -46,13 +46,13 @@ export default class Auth extends Component {
                     {!this.state.stageForgotPwd &&
                         <AuthInput icon='lock' placeholder='Senha' value={this.state.password}
                             style={styles.input} onChangeText={password => this.setState({password})} 
-                            secureTextEntry={true} />
+                            secureTextEntry />
                     }
                     
                     {this.state.stageNewUser &&
                         <AuthInput icon='lock' placeholder='Confirme sua senha' 
                             value={this.state.confirmPassword}
-                            style={styles.input} secureTextEntry={true}
+                            style={styles.input} secureTextEntry
                             onChangeText={confirmPassword => this.setState({ confirmPassword })} />
                     }
 
