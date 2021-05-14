@@ -1,7 +1,8 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
-import { Gravatar } from 'react-native-gravatar'
+import UserAvatar from 'react-native-user-avatar'
+//import { Gravatar } from 'react-native-gravatar'
 
 import Icon from 'react-native-vector-icons/Ionicons' //ios-exit-outline
 
@@ -14,7 +15,8 @@ export default props => {
         <DrawerContentScrollView>
             <View style={styles.container}>
                 <View >
-                    <Gravatar style={styles.avatar} options={{ email: 'gustavomlstefano@gmail.com', secure: true }} />
+                    {/* <Gravatar style={styles.avatar} options={{ email: 'gustavomlstefano@gmail.com', secure: true }} /> */}
+                    <UserAvatar src='https://i.pinimg.com/564x/1b/c4/34/1bc434275a68c1728c6031df1c35a7e1.jpg' />
                 </View>
                 <View style={styles.infos}>
                     <View>
@@ -37,6 +39,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomWidth: 3,
         borderColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: '#eee'
     },
     avatar: {
         height: 80,
