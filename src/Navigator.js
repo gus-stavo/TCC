@@ -5,19 +5,18 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 
-import Icon1 from 'react-native-vector-icons/MaterialCommunityIcons'
-import Icon2 from 'react-native-vector-icons/Ionicons'
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import GroupList from './screens/GroupList'
 import ActivityList from './screens/ActivityList'
-
 import Menu from './screens/Menu'
+import Auth from './screens/Auth'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
 
-const ActivityNavigator = props => {
+const ActivityNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{ headerShown: false}}>
             <Stack.Screen name='Grupos' component={GroupList} />
@@ -26,26 +25,26 @@ const ActivityNavigator = props => {
     )
 }
 
-const MenuNavigator = props => {
+const MenuNavigator = () => {
     return (
             <Tab.Navigator tabBarOptions={{ showLabel: false, style: styles.container }}
                 screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {
+                    tabBarIcon: ({ focused }) => {
                         let iconName
                         let icon
 
                         switch(route.name) {
-                            case 'Grupos':
+                            case 'Grupos Tab':
                                 iconName = focused ? 'home' : 'home-outline'
-                                icon = <Icon1 name={iconName} size={50} color='#222' />
+                                icon = <Icon name={iconName} size={45} color='#222' />
                                 break
                             case 'Minhas atividades':
-                                iconName = focused ? 'calendar' : 'calendar-outline'
-                                icon =  <Icon2 name={iconName} size={40} color='#222' />
+                                iconName = focused ? 'calendar-month' : 'calendar-month-outline'
+                                icon =  <Icon name={iconName} size={40} color='#222' />
                                 break
                             case 'Perfil':
-                                iconName = focused ? 'person' : 'person-outline'
-                                icon =  <Icon2 name={iconName} size={40} color='#222' />
+                                iconName = focused ? 'account' : 'account-outline'
+                                icon =  <Icon name={iconName} size={45} color='#222' />
                                 break
                             default:
                                 break
@@ -53,14 +52,14 @@ const MenuNavigator = props => {
                         return icon
                     }
                 })}>
-                <Tab.Screen name='Grupos' component={ActivityNavigator} />
+                <Tab.Screen name='Grupos Tab' component={ActivityNavigator} />
                 <Tab.Screen name='Minhas atividades' component={GroupList} />
                 <Tab.Screen name='Perfil' component={GroupList} />
             </Tab.Navigator>
     )
 }
 
-const ScreenNavigator = props => {
+const ScreenNavigator = () => {
     return (
         <Drawer.Navigator initialRouteName='Home' 
             drawerPosition='right' 
@@ -87,10 +86,19 @@ const ScreenNavigator = props => {
     )
 }
 
+const AuthOrHome = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
+            <Stack.Screen name='Auth Stack' component={Auth} />
+            <Stack.Screen name='Home Stack' component={ScreenNavigator} />
+        </Stack.Navigator>
+    )
+}
+
 const Navigator = () => {
     return (
         <NavigationContainer>
-            <ScreenNavigator />
+            <AuthOrHome />
         </NavigationContainer>
     )
 }

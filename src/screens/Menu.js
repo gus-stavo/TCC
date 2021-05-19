@@ -1,29 +1,50 @@
 import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
-import UserAvatar from 'react-native-user-avatar'
-//import { Gravatar } from 'react-native-gravatar'
+import { CommonActions } from '@react-navigation/native'
+import { Avatar } from 'react-native-elements'
 
-import Icon from 'react-native-vector-icons/Ionicons' //ios-exit-outline
-
-const logout = () => {
-    Alert.alert('Sair', 'Deseja sair?')
-}
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default props => {
+
+    const logout = () => {
+        Alert.alert('Sair', 'Deseja sair?', 
+        [
+            {
+                text: 'Não',
+                onPress: () => {}
+            },
+            {
+                text: 'Sim',
+                onPress: () => {
+                    props.navigation.dispatch(
+                        CommonActions.reset({
+                            index: 0,
+                            routes: [
+                                {
+                                    name: 'Auth Stack',
+                                },
+                            ],
+                        })
+                    )
+                } 
+            }
+        ])
+    }
+
     return (
         <DrawerContentScrollView>
             <View style={styles.container}>
                 <View >
-                    {/* <Gravatar style={styles.avatar} options={{ email: 'gustavomlstefano@gmail.com', secure: true }} /> */}
-                    <UserAvatar src='https://i.pinimg.com/564x/1b/c4/34/1bc434275a68c1728c6031df1c35a7e1.jpg' />
+                    <Avatar rounded title='GS' size='medium' style={styles.avatar} titleStyle={{ color: '#eee' }} />
                 </View>
                 <View style={styles.infos}>
                     <View>
                         <Text style={styles.name}>Gustavo Stefano</Text>
                     </View>
                     <TouchableOpacity style={styles.icon} onPress={logout}>
-                        <Icon name='ios-exit-outline' size={35} color='#222' />
+                        <Icon name='exit-to-app' size={35} color='#222' />
                         <Text style={styles.iconText}>Sair</Text>
                     </TouchableOpacity>
                 </View>
@@ -48,6 +69,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 10,
         marginBottom: 10,
+        backgroundColor: '#222',
     },
     infos: {
         flex:1,

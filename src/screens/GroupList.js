@@ -7,11 +7,11 @@ import Groups from '../Groups'
 
 export default class GroupList extends Component {
 
-    openActivities = props => {
+    openActivities = () => {
         this.props.navigation.navigate('Atividades')
     }
 
-    openDrawer = props => {
+    openDrawer = () => {
         this.props.navigation.openDrawer()
     }
 

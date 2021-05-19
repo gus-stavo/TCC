@@ -3,28 +3,35 @@ import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native'
  
 import AuthInput from '../components/AuthInput'
 
-export default class Auth extends Component {
-
-    state ={
+const initialState = {
         name:'',
         email:'',
         password:'',
         confirmPassword:'',
         stageNewUser: false,
         stageForgotPwd: false
+}
+
+export default class Auth extends Component {
+
+    state = {
+        ...initialState
     }
 
     signinOrSignup = () =>{
         if(this.state.stageNewUser){
             Alert.alert('Sucesso ao criar a conta!')
+            this.setState({ ...initialState })
         }else if(this.state.stageForgotPwd){
             Alert.alert('Sucesso, senha nova enviada ao seu e-mail!')
+            this.setState({ ...initialState })
         }
         else{
             Alert.alert('Sucesso, logado!')
+            this.props.navigation.navigate('Home Stack')
         }
     }
-
+    
     render() {
         return (            
             <View style={styles.background}>
