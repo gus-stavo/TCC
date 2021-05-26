@@ -11,6 +11,7 @@ import GroupList from './screens/GroupList'
 import ActivityList from './screens/ActivityList'
 import Menu from './screens/Menu'
 import Auth from './screens/Auth'
+import Profile from './screens/Profile'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -27,7 +28,7 @@ const ActivityNavigator = () => {
 
 const MenuNavigator = () => {
     return (
-            <Tab.Navigator tabBarOptions={{ showLabel: false, style: styles.container }}
+            <Tab.Navigator tabBarOptions={{ showLabel: false, style: styles.containerTab }}
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused }) => {
                         let iconName
@@ -54,7 +55,7 @@ const MenuNavigator = () => {
                 })}>
                 <Tab.Screen name='Grupos Tab' component={ActivityNavigator} />
                 <Tab.Screen name='Minhas atividades' component={GroupList} />
-                <Tab.Screen name='Perfil' component={GroupList} />
+                <Tab.Screen name='Perfil' component={Profile} />
             </Tab.Navigator>
     )
 }
@@ -106,10 +107,8 @@ const Navigator = () => {
 export default Navigator
 
 const styles = StyleSheet.create({
-    container: {
+    containerTab: {
         backgroundColor: '#eee',
         elevation: 5,
-        borderWidth: 1,
-        borderColor: '#222'
     }
 })
