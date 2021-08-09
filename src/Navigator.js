@@ -12,6 +12,7 @@ import ActivityList from './screens/ActivityList'
 import Menu from './screens/Menu'
 import Auth from './screens/Auth'
 import Profile from './screens/Profile'
+import Contact from './screens/Contact'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -82,7 +83,7 @@ const ScreenNavigator = () => {
             drawerContent={(props) => <Menu {...props} />}>
             <Drawer.Screen name='Home' component={MenuNavigator} />
             <Drawer.Screen name='Configurações' component={GroupList} />
-            <Drawer.Screen name='Contate-nos' component={GroupList} />
+            <Drawer.Screen name='Contate-nos' component={Contact} />
         </Drawer.Navigator>
     )
 }

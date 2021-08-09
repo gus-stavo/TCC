@@ -7,30 +7,42 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 export default class Profile extends Component{
 
-    state ={
-        name:'NUBS',
-        email:'nubstcc@gmail.com',
-        password:'macaco',
-        confirmPassword:'macaco',
-        cep:'11451140',
-        state:'São Paulo',
-        city:'Santos',
-        street:'Avenida siqueira campos',
-        housen:'1152',
-        neighbhd:'Embaré',
+    state = {
+        name:'',
+        cep:'',
+        state:'',
+        city:'',
+        district:'',
+        street:'',
+        number:'',
         editMode: false,
     }
 
-    save = () =>{
-        this.props.onSave(this.editedProfile)
+    save = () => {
+        this.props.onSave(this.editedProfile)  
     }
 
-    editedProfile = () =>{
+    editedProfile = () => {
         if(this.state.editMode){
-            Alert.alert('Editado com Sucesso')
+            Alert.alert('Editado com sucesso')
         }else{
             Alert.alert('Usuário deslogado')
         }
+    }
+
+    buscaCep = async () => {
+        let response = await fetch(
+            `https://viacep.com.br/ws/${this.state.cep}/json/`
+        );
+
+        let json = await response.json();
+
+        this.setState({
+            state: json.uf,
+            city: json.localidade,
+            district: json.bairro,
+            street: json.logradouro
+        })
     }
 
     render(){
@@ -53,48 +65,39 @@ export default class Profile extends Component{
                 <ScrollView>
                     <View style={styles.containerInfo}>
                         <Text style={styles.label}>Nome:</Text>
-                    
-                        {this.state.editMode ?  <TextInput  style={styles.EditableText} placeholder='Atualize seu Nome'>{this.state.name}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={name => this.setState({name})}>{this.state.name}</TextInput>}   
-
-                        <Text style={styles.label}>E-mail:</Text>
-                        {this.state.editMode ?   <TextInput  style={styles.EditableText} placeholder='Atualize seu Email'>{this.state.email}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={email => this.setState({email})}>{this.state.email}</TextInput>}   
-                        
-                        <Text style={styles.label}>Senha:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} secureTextEntry={true} placeholder='Atualize sua Senha'>{this.state.password}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} secureTextEntry={true} onChangeText={password => this.setState({password})}>{this.state.password}</TextInput>}     
-                            
-                        {(this.state.editMode ) &&
-                        <>              
-                        <Text style={styles.label}>Confirme sua Senha:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} secureTextEntry={true} placeholder='Atualize sua Senha'>{this.state.password}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} secureTextEntry={true}  onChangeText={confirmPassword => this.setState({confirmPassword})}>{this.state.confirmPassword}</TextInput>} 
-                        </>}
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={name => this.setState({ name })} placeholder='Atualize seu nome'>
+                            {this.state.name}
+                        </TextInput>
 
                         <Text style={styles.label}>CEP:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu CEP'>{this.state.cep}</TextInput> :                         
-                        <TextInput style={styles.text} editable={false} onChangeText={cep => this.setState({cep})}>{this.state.cep}</TextInput>}
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} onEndEditing={this.buscaCep} editable={this.state.editMode ? true : false} onChangeText={cep => this.setState({ cep })} placeholder='Atualize seu CEP'>
+                            {this.state.cep}
+                        </TextInput>
 
                         <Text style={styles.label}>Estado:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu Estado'>{this.state.state}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={state => this.setState({state})}>{this.state.state}</TextInput>}
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={state => this.setState({ state })} placeholder='Atualize seu estado'>
+                            {this.state.state}
+                        </TextInput>
 
                         <Text style={styles.label}>Cidade:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu Cidade'>{this.state.city}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={city => this.setState({city})}>{this.state.city}</TextInput>}
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={city => this.setState({ city })} placeholder='Atualize sua cidade'>
+                            {this.state.city}
+                        </TextInput>
 
                         <Text style={styles.label}>Bairro:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu Bairro'> {this.state.neighbhd}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={neighbhd => this.setState({neighbhd})}>{this.state.neighbhd}</TextInput>}
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={district => this.setState({ district })} placeholder='Atualize seu bairro'>
+                            {this.state.district}
+                        </TextInput>
 
-                            <Text style={styles.label}>Rua:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu Rua'>{this.state.street} </TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={street => this.setState({street})}>{this.state.street}</TextInput>}
+                        <Text style={styles.label}>Rua:</Text>
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={street => this.setState({ street })} placeholder='Atualize sua rua'>
+                            {this.state.street}
+                        </TextInput>
 
-                            <Text style={styles.label}>Número:</Text>
-                        {this.state.editMode ?  <TextInput style={styles.EditableText} placeholder='Atualize seu Número'> {this.state.housen}</TextInput> : 
-                        <TextInput style={styles.text} editable={false} onChangeText={housen => this.setState({housen})}>{this.state.housen}</TextInput>} 
+                        <Text style={styles.label}>Número:</Text>
+                        <TextInput style={[styles.text, {color: this.state.editMode ? '#929292' : 'black'}]} editable={this.state.editMode ? true : false} onChangeText={number => this.setState({ number })} placeholder='Atualize seu número'>
+                            {this.state.number}
+                        </TextInput>
                     </View>
                     {this.state.editMode &&           
                         <View style={styles.containerBtn}>
@@ -186,7 +189,7 @@ const styles = StyleSheet.create({
         padding:10,
         color:'black'
     },
-    EditableText:{
+    editText:{
         marginTop: 20,
         fontSize: 20,
         borderBottomWidth:1,
