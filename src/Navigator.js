@@ -15,6 +15,8 @@ import Profile from './screens/Profile'
 import Contact from './screens/Contact'
 import Activity from './screens/Activity'
 
+import Etapa1 from './Temp/Etapa1'
+
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
 const Drawer = createDrawerNavigator()
@@ -56,7 +58,7 @@ const MenuNavigator = () => {
                     }
                 })}>
                 <Tab.Screen name='Grupos Tab' component={ActivityNavigator} />
-                <Tab.Screen name='Minhas atividades' component={Activity} />
+                <Tab.Screen name='Minhas atividades' component={Etapa1} />
                 <Tab.Screen name='Perfil' component={Profile} />
             </Tab.Navigator>
     )

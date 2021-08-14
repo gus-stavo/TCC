@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native'
+import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
 
 const initialState = {
         tema:'',

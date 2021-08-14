@@ -70,7 +70,7 @@ export default class Auth extends Component {
                             </Text>
                         </View>
                     </TouchableOpacity>
-                </View>
+
                 <View>
                     {(!this.state.stageForgotPwd && !this.state.stageNewUser) &&
                         <View style={styles.textButtons}>
@@ -105,6 +105,7 @@ export default class Auth extends Component {
                         </View>
                     }
                 </View>
+                </View>
             </View>
         )
     }
@@ -112,27 +113,43 @@ export default class Auth extends Component {
 
 const styles = StyleSheet.create({
     background: {
-        flex: 1,
+        backgroundColor: 'rgba(111, 222, 552, 1)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%'
+      },
+      formContainer: {
+        backgroundColor: '#EEE',
+        width: '87%',
+        height: '92%',
+        borderWidth: 0.5,
+        borderRadius: 10,
+        elevation: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(111, 222, 552, 1)'
-    },
+      },
+    // background: {
+    //     flex: 1,
+    //     alignItems: 'center',
+    //     justifyContent: 'center',
+    //     backgroundColor: 'rgba(111, 222, 552, 1)'
+    // },
     title: {
         fontSize: 70,
         marginBottom: 10,
         fontFamily: "Exo2-SemiBoldItalic",
         color: '#222',
     },
-    formContainer: {
-        backgroundColor: '#eee',
-        padding: 20,
-        width: '90%',
-        borderRadius: 10,
-        alignItems: 'center',
-        borderWidth: 1,
-        borderColor: '#222',
-        elevation: 8,
-    },
+    // formContainer: {
+    //     backgroundColor: '#eee',
+    //     padding: 20,
+    //     width: '90%',
+    //     borderRadius: 10,
+    //     alignItems: 'center',
+    //     borderWidth: 1,
+    //     borderColor: '#222',
+    //     elevation: 8,
+    // },
     subTitle: {
         fontSize: 20,
         textAlign: 'center',

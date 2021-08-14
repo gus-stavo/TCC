@@ -86,6 +86,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     height: '100%'
   },
+  mainContainer: {
+    backgroundColor: '#FFF',
+    width: '87%',
+    height: '92%',
+    borderWidth: 0.5,
+    borderRadius: 10,
+    elevation: 50
+  },
   ativImage: {
     width: 'auto',
     height: '25%',
@@ -108,14 +116,6 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     flex: 1,
     flexWrap: 'wrap'
-  },
-  mainContainer: {
-    backgroundColor: '#FFF',
-    width: '87%',
-    height: '92%',
-    borderWidth: 0.5,
-    borderRadius: 10,
-    elevation: 50
   },
   modalContainer: {
     flex: 1,

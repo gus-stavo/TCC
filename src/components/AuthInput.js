@@ -14,7 +14,7 @@ export default props =>{
 
 const styles = StyleSheet.create({
     container:{
-        width:'100%',
+        width:'90%',
         height:40,
         backgroundColor:'#eee',
         borderRadius:20,

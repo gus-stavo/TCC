@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Alert, ScrollView, Button } from 'react-native'
-
 import { Avatar } from 'react-native-elements'
+import Header from '../components/Header'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -45,9 +45,16 @@ export default class Profile extends Component{
         })
     }
 
+    openDrawer = () => {
+        this.props.navigation.openDrawer()
+    }
+
     render(){
         return(
             <View style={styles.container}>
+                <View >
+                    <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
+                </View>
                 <View style={styles.containerTop}>
                     <View style={styles.containerAvatar}>
                         <Avatar rounded title='GS' size='xlarge' style={styles.avatar} titleStyle={{ color: '#eee' }} />
