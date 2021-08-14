@@ -13,6 +13,7 @@ import Menu from './screens/Menu'
 import Auth from './screens/Auth'
 import Profile from './screens/Profile'
 import Contact from './screens/Contact'
+import Activity from './screens/Activity'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -55,7 +56,7 @@ const MenuNavigator = () => {
                     }
                 })}>
                 <Tab.Screen name='Grupos Tab' component={ActivityNavigator} />
-                <Tab.Screen name='Minhas atividades' component={GroupList} />
+                <Tab.Screen name='Minhas atividades' component={Activity} />
                 <Tab.Screen name='Perfil' component={Profile} />
             </Tab.Navigator>
     )

@@ -5,17 +5,21 @@ import { Avatar } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+const initialState = {
+    name:'',
+    cep:'',
+    state:'',
+    city:'',
+    district:'',
+    street:'',
+    number:'',
+    editMode: false,
+}
+
 export default class Profile extends Component{
 
     state = {
-        name:'',
-        cep:'',
-        state:'',
-        city:'',
-        district:'',
-        street:'',
-        number:'',
-        editMode: false,
+        ...initialState
     }
 
     save = () => {
@@ -23,11 +27,7 @@ export default class Profile extends Component{
     }
 
     editedProfile = () => {
-        if(this.state.editMode){
-            Alert.alert('Editado com sucesso')
-        }else{
-            Alert.alert('Usuário deslogado')
-        }
+        Alert.alert('Editado com sucesso')
     }
 
     buscaCep = async () => {
@@ -46,11 +46,7 @@ export default class Profile extends Component{
     }
 
     render(){
-
-        const options = {email: 'fodase', secure:true}
-
         return(
-        
             <View style={styles.container}>
                 <View style={styles.containerTop}>
                     <View style={styles.containerAvatar}>
@@ -149,8 +145,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         color: '#222',
     },
-
-
     containerBtn: {
         alignItems: 'center',
         marginBottom: 50,
@@ -170,8 +164,6 @@ const styles = StyleSheet.create({
         color: '#222',     
         fontFamily: 'Exo2-Medium' 
     },
-    
-    
     nickname:{
         marginTop: 30,
         fontSize: 30,
