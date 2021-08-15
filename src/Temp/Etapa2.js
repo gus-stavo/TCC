@@ -1,7 +1,6 @@
 import React, {Component, state} from 'react'
 import {View, Text, StyleSheet, TextInput, TouchableOpacity,} from 'react-native'
-import Geolocation from '@react-native-community/geolocation'
-import StepIndicator from 'react-native-step-indicator';
+
 
 export default class Contact extends Component{
     render(){

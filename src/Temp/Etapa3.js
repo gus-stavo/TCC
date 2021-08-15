@@ -1,33 +1,10 @@
 import React, {Component, state} from 'react'
 import {View, Text, StyleSheet, TextInput, Switch, Keyboard, TouchableOpacity} from 'react-native'
-import StepIndicator from 'react-native-step-indicator';
+
  
 export default class Contact extends Component{
 
-    
-    customStyles =  {
-        stepIndicatorSize: 25,
-        currentStepIndicatorSize:30,
-        separatorStrokeWidth: 2,
-        currentStepStrokeWidth: 3,
-        stepStrokeCurrentColor: '#00d9e7',
-        stepStrokeWidth: 3,
-        stepStrokeFinishedColor: '#00d9e7',
-        stepStrokeUnFinishedColor: 'gray',
-        separatorFinishedColor: '#00d9e7',
-        separatorUnFinishedColor: 'gray',
-        stepIndicatorFinishedColor: '#00d9e7',
-        stepIndicatorUnFinishedColor: '#ffffff',
-        stepIndicatorCurrentColor: '#ffffff',
-        stepIndicatorLabelFontSize: 13,
-        currentStepIndicatorLabelFontSize: 13,
-        stepIndicatorLabelCurrentColor: '#00d9e7',
-        stepIndicatorLabelFinishedColor: '#ffffff',
-        stepIndicatorLabelUnFinishedColor: 'black',
-        labelColor: 'black',
-        labelSize: 20,
-        currentStepLabelColor: '#00d9e7'
-      }
+
     state = {
         Problema: '',
         switchValue: false,
@@ -43,14 +20,7 @@ export default class Contact extends Component{
             <View style={styles.containerBotTittle}>
                 <View style={styles.inputTittleView}>
                     <View style={styles.containetStep}>
-                        <View>
-                            <StepIndicator
-                                customStyles={this.customStyles}
-                                stepCount = {3}
-                                labels={this.labels}
-                                currentPosition={this.state.currentPosition}
-                            />
-                        </View>
+
                     </View>
                     <View  style={styles.switchStyle}>
                                 <Text style={styles.inputTittle}>    

@@ -4,7 +4,7 @@ import { Avatar } from 'react-native-elements'
 import {Picker} from '@react-native-picker/picker'
 
 const initialState = {
-    problema: '',
+    problema: 'Escolha',
     switchValue: false,
     currentPosition:0
 }
@@ -70,6 +70,7 @@ export default class Contact extends Component{
                     <View style={styles.containerButton}>
                         <TouchableOpacity style={styles.editedProfileButton} >
                             <Text style={styles.buttonText}>Proxima</Text>
+                            
                         </TouchableOpacity>                      
                     </View>
                 </View>

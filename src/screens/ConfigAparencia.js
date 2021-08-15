@@ -2,7 +2,13 @@ import React, { Component } from 'react'
 import { View, Text, StyleSheet, Switch } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 
+import Header from '../components/Header'
+
 export default class Config extends Component {
+
+  openDrawer = () => {
+    this.props.navigation.openDrawer()
+}
 
   openActivities = props => {
     this.props.navigation.navigate('Configurações')
@@ -19,6 +25,9 @@ export default class Config extends Component {
     return (
 
       <View style={styles.container}>
+        <View>
+          <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
+        </View>
         <View style={styles.containerBox}>
           <View style={styles.containerItem}>
             <Text style={styles.titulo}>Tema escuro</Text>

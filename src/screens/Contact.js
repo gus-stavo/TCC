@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
+import {Picker} from '@react-native-picker/picker'
+
+import Header from '../components/Header'
 
 const initialState = {
         tema:'',
@@ -7,7 +10,11 @@ const initialState = {
         desc:'',
 }
 
-export default class Auth extends Component {
+export default class Contact extends Component {
+
+    openDrawer = () => {
+        this.props.navigation.openDrawer()
+    }
 
     state = {
         ...initialState
@@ -15,15 +22,32 @@ export default class Auth extends Component {
 
     render() {
         return (          
-            <View style={styles.background}>
-                <View style={styles.formContainer}>
+            <View style={styles.container}>
+                <View>
+                    <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
+                </View>
+                <View style={styles.mainContainer}>
                     <Text style={styles.title}>Contate-nos</Text>
-                    <TextInput></TextInput>
-                    <TextInput></TextInput>
+                    <Text style={styles.subtitle}>Sua mensagem será analisada em até 24 horas.</Text>
+                    <View style={styles.picker}> 
+                        <Picker
+                            mode="dropdown"
+                            selectedValue={this.state.tema}
+                            onValueChange={(tema) =>
+                                this.setState({ tema })
+                            }>   
+                            <Picker.Item label="Escolha um tópico" value="" />
+                            <Picker.Item label="Sugestão de grupo" value="Futebol" />
+                            <Picker.Item label="Erro no aplicativo" value="Pesca" />
+                            <Picker.Item label="Outros" value="Caminhada" />
+                        </Picker>
+                    </View>
+                    <TextInput style={styles.titleMessage} placeholder="Título:"></TextInput>
+                    <TextInput style={styles.message} placeholder="Descreva seu problema:" multiline numberOfLines={10}></TextInput>
                     <TouchableOpacity>
-                        <View>
-                            <Text>
-                                   
+                        <View style={styles.button}>
+                            <Text style={styles.buttonText}>
+                                Enviar 
                             </Text>
                         </View>
                     </TouchableOpacity>
@@ -34,37 +58,63 @@ export default class Auth extends Component {
 }
 
 const styles = StyleSheet.create({
-    background: {
-        flex: 1,
+    container: {
+        backgroundColor: 'rgba(111, 222, 552, 1)',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100%'
+      },
+      mainContainer: {
+        backgroundColor: '#EEE',
+        width: '87%',
+        height: '92%',
+        borderWidth: 0.5,
+        borderRadius: 10,
+        elevation: 50,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'rgba(111, 222, 552, 1)'
-    },
+      },
     title: {
-        fontSize: 70,
+        fontSize: 50,
         marginBottom: 10,
+        marginHorizontal: 20,
         fontFamily: "Exo2-SemiBoldItalic",
         color: '#222',
     },
-    formContainer: {
-        backgroundColor: '#eee',
-        padding: 20,
-        width: '90%',
-        borderRadius: 10,
-        alignItems: 'center',
-        borderWidth: 1,
-        borderColor: '#222',
-        elevation: 8,
-    },
-    subTitle: {
-        fontSize: 20,
+    subtitle: {
+        marginHorizontal: 20,
+        fontSize: 25,
+        fontFamily: 'Exo2-Medium',
         textAlign: 'center',
         color: '#222',
         marginBottom: 10,
-        fontFamily: 'Exo2-Medium'
     },
-    input: {
-        marginTop: 10,
+    picker: {
+        borderWidth:1,
+        borderRadius:20,
+        borderStyle:'solid',
+        width: '80%',
+        justifyContent: 'center',
+        height: 40,
+    },
+    titleMessage: {
+        width: '80%',
+        fontSize: 25,
+        borderBottomWidth:1,
+        borderStyle:'solid',
+        fontFamily: 'Exo2-Medium',
+    },
+    message: {
+        marginTop: 20,
+        fontSize: 20,
+        borderWidth:1,
+        borderRadius:20,
+        borderStyle:'solid',
+        width: '80%',
+        padding: 10,
+        fontFamily: 'Exo2-Medium',
+        textAlignVertical: 'top'
+
     },
     button: {
         backgroundColor: 'rgba(111, 222, 552, 1)',
@@ -82,19 +132,5 @@ const styles = StyleSheet.create({
         color: '#222',
         fontSize: 20,
         fontFamily: 'Exo2-Medium'
-    },
-    textButtons: {
-        alignItems: 'center',
-        
-    },
-    textButton: {
-        alignItems: 'center',
-        marginTop: 50
-        
-    },
-    textButtonTitle: {
-        fontSize: 20,
-        fontFamily: 'Exo2-Medium',
-        color: '#222',
-    }  
+    }
 })

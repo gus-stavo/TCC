@@ -13,9 +13,15 @@ import Menu from './screens/Menu'
 import Auth from './screens/Auth'
 import Profile from './screens/Profile'
 import Contact from './screens/Contact'
+import Config from './screens/Config'
+import ConfigConta from './screens/ConfigConta'
+import ConfigAparencia from './screens/ConfigAparencia'
+import ConfigAbout from './screens/ConfigAbout'
 import Activity from './screens/Activity'
 
 import Etapa1 from './Temp/Etapa1'
+import Etapa2 from './Temp/Etapa2'
+import Etapa3 from './Temp/Etapa3'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -26,6 +32,17 @@ const ActivityNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false}}>
             <Stack.Screen name='Grupos' component={GroupList} />
             <Stack.Screen name='Atividades' component={ActivityList} />
+        </Stack.Navigator>
+    )
+}
+
+const ConfigNavigator = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
+            <Stack.Screen name='Configurações' component={Config} />
+            <Stack.Screen name='Aparência' component={ConfigAparencia} />
+            <Stack.Screen name='Conta' component={ConfigConta} />
+            <Stack.Screen name='Sobre' component={ConfigAbout} />
         </Stack.Navigator>
     )
 }
@@ -58,7 +75,7 @@ const MenuNavigator = () => {
                     }
                 })}>
                 <Tab.Screen name='Grupos Tab' component={ActivityNavigator} />
-                <Tab.Screen name='Minhas atividades' component={Etapa1} />
+                <Tab.Screen name='Minhas atividades' component={ActivityList} />
                 <Tab.Screen name='Perfil' component={Profile} />
             </Tab.Navigator>
     )
@@ -85,7 +102,7 @@ const ScreenNavigator = () => {
             }}
             drawerContent={(props) => <Menu {...props} />}>
             <Drawer.Screen name='Home' component={MenuNavigator} />
-            <Drawer.Screen name='Configurações' component={GroupList} />
+            <Drawer.Screen name='Configurações' component={ConfigNavigator} />
             <Drawer.Screen name='Contate-nos' component={Contact} />
         </Drawer.Navigator>
     )
