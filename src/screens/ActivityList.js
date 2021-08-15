@@ -22,7 +22,7 @@ export default class ActivityList extends Component {
             <Pressable>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  <Image style={styles.avatar} source={require('./assets/favicon.png')} />
+                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Dono</Text>
@@ -39,7 +39,7 @@ export default class ActivityList extends Component {
             <Pressable>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  <Image style={styles.avatar} source={require('./assets/favicon.png')} />
+                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Membro</Text>
@@ -56,7 +56,7 @@ export default class ActivityList extends Component {
             <Pressable>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  <Image style={styles.avatar} source={require('./assets/favicon.png')} />
+                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Membro</Text>

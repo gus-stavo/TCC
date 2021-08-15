@@ -38,7 +38,7 @@ export default class Activity extends Component {
                     <Pressable>
                       <View style={styles.memberView}>
                         <View style={styles.member}>
-                          <Image style={styles.avatar} source={require('./assets/favicon.png')} />
+                          {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
                           <View>
                             <Text style={styles.title}>Futebol</Text>
                             <Text style={styles.description}>Membro</Text>
@@ -60,9 +60,9 @@ export default class Activity extends Component {
               </View>
             </View>
           </Modal>
-          <Image
+          {/* <Image
             style={styles.ativImage}
-            source={require('./assets/favicon.png')} />
+            source={require('./assets/favicon.png')} /> */}
           <Pressable>
             <View style={styles.buttons}>
               <Icon size={40} style={styles.iconStyle} name='calendar-month-outline'></Icon>
