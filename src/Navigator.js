@@ -18,10 +18,9 @@ import ConfigConta from './screens/ConfigConta'
 import ConfigAparencia from './screens/ConfigAparencia'
 import ConfigAbout from './screens/ConfigAbout'
 import Activity from './screens/Activity'
-
-import Etapa1 from './Temp/Etapa1'
-import Etapa2 from './Temp/Etapa2'
-import Etapa3 from './Temp/Etapa3'
+import CreateActy1 from './screens/CreateActy1'
+import CreateActy2 from './screens/CreateActy2'
+import CreateActy3 from './screens/CreateActy3'
 
 const Tab = createBottomTabNavigator()
 const Stack = createStackNavigator()
@@ -32,6 +31,10 @@ const ActivityNavigator = () => {
         <Stack.Navigator screenOptions={{ headerShown: false}}>
             <Stack.Screen name='Grupos' component={GroupList} />
             <Stack.Screen name='Atividades' component={ActivityList} />
+            <Stack.Screen name='Atividade' component={Activity} />
+            <Stack.Screen name='Etapa 1' component={CreateActy1} />
+            <Stack.Screen name='Etapa 2' component={CreateActy2} />
+            <Stack.Screen name='Etapa 3' component={CreateActy3} />
         </Stack.Navigator>
     )
 }

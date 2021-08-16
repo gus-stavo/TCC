@@ -68,7 +68,7 @@ export default class Contact extends Component{
                         </View>
                     }
                     <View style={styles.containerButton}>
-                        <TouchableOpacity style={styles.editedProfileButton} >
+                        <TouchableOpacity style={styles.editedProfileButton} onPress={() => {this.props.navigation.navigate('Etapa 2')}}>
                             <Text style={styles.buttonText}>Proxima</Text>
                             
                         </TouchableOpacity>                      

@@ -19,7 +19,7 @@ export default class ActivityList extends Component {
       <View style={styles.container}>
         <ScrollView style={styles.scrollStyles}>
           <View style={styles.containerButton}>
-            <Pressable>
+            <Pressable onPress={() => {this.props.navigation.navigate('Atividade')}}>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
                   {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
@@ -91,12 +91,12 @@ export default class ActivityList extends Component {
             <View style={styles.modalView}>
               <Text style={styles.modalTitle}>Deseja criar uma atividade?</Text>
               <View style={styles.modalButtons}>
-                <Pressable onPress={() => this.setState({ modalVisible: !this.state.modalVisible })}>
+                <Pressable onPress={() => {this.setState({ modalVisible: !this.state.modalVisible })}}>
                   <View style={styles.modalButton}>
                     <Text style={styles.title}>Não</Text>
                   </View>
                 </Pressable>
-                <Pressable>
+                <Pressable onPress={() => {this.props.navigation.navigate('Etapa 1')}}>
                   <View style={styles.modalButton}>
                     <Text style={styles.title}>Sim</Text>
                   </View>
