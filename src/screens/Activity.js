@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
     backgroundColor: commonStyles.cores.azul,
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%'
+    height: '100%',
+    //teste
   },
   mainContainer: {
     backgroundColor: commonStyles.cores.branco,
