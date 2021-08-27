@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity, TextInput} from 'react-native'
 import {Picker} from '@react-native-picker/picker'
 
 import Header from '../components/Header'
+import commonStyles from '../commonStyles'
 
 const initialState = {
         tema:'',
@@ -59,13 +60,13 @@ export default class Contact extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%'
       },
       mainContainer: {
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         width: '87%',
         height: '92%',
         borderWidth: 0.5,
@@ -79,14 +80,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginHorizontal: 20,
         fontFamily: "Exo2-SemiBoldItalic",
-        color: '#222',
+        color: commonStyles.cores.preto,
     },
     subtitle: {
         marginHorizontal: 20,
         fontSize: 25,
         fontFamily: 'Exo2-Medium',
         textAlign: 'center',
-        color: '#222',
+        color: commonStyles.cores.preto,
         marginBottom: 10,
     },
     picker: {
@@ -117,19 +118,19 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         marginTop: 20,
         marginBottom: 10,
         padding: 10,
         alignItems: 'center',
         borderRadius: 10,
-        borderColor: '#222',
+        borderColor: commonStyles.cores.preto,
         width: 150,
         borderWidth: 1,
         elevation: 5
     },
     buttonText: {
-        color: '#222',
+        color: commonStyles.cores.preto,
         fontSize: 20,
         fontFamily: 'Exo2-Medium'
     }

@@ -1,6 +1,7 @@
 import React, {Component, state} from 'react'
 import {View, Text, StyleSheet, TextInput, Switch, Keyboard, TouchableOpacity} from 'react-native'
 
+import commonStyles from '../commonStyles'
  
 export default class Contact extends Component{
 
@@ -80,7 +81,7 @@ const styles = StyleSheet.create({
         containerBotTittle:{
             alignItems: 'center',
             justifyContent: 'center',
-            backgroundColor: 'white',
+            backgroundColor: commonStyles.cores.branco,
             borderWidth:1,
             borderRadius:15,
             height:'85%',
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
         },
         buttonText:{
             fontSize: 20,
-            color:'black',
+            color: commonStyles.cores.preto,
             textAlign: 'center',        
         }, 
         editedProfileButton:{

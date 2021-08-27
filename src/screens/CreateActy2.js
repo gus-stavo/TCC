@@ -1,6 +1,7 @@
 import React, { Component, state } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, } from 'react-native'
 
+import commonStyles from '../commonStyles'
 
 export default class Contact extends Component {
     render() {
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
         height: 230,
         borderWidth: 1,
         borderRadius: 25,
-        borderColor: 'black'
+        borderColor: commonStyles.cores.preto
     },
     problemLabel: {
         fontSize: 35,
@@ -94,7 +95,7 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         width: 300,
         padding: 10,
-        color: 'black'
+        color: commonStyles.cores.preto
     },
     EditableText: {
         fontSize: 20,

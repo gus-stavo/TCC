@@ -4,6 +4,7 @@ import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import Header from '../components/Header'
+import commonStyles from '../commonStyles'
 
 export default class Config extends Component {
 
@@ -136,25 +137,24 @@ const styles = StyleSheet.create({
         padding: 20,
         maxHeight: 600,
         maxWidth: 500,
-        backgroundColor: "white",
         borderWidth: 1,
         borderRadius: 10,
         shadowOpacity: 20,
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         
         
         },
     
     container: {
         flex: 1,
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
     },
     containerBox: {
         flexDirection: 'column',
         flex: 1,
         padding: 30,
         margin: '5%',
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         borderWidth: 1,
         borderRadius: 25,
     },
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
  
     clicavelModal: {
         flexDirection: 'row',
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         borderWidth: 2,
         borderBottomWidth: 2,
         borderRadius: 25,
@@ -220,7 +220,7 @@ const styles = StyleSheet.create({
     clicavel: {
         
         margin: 20,
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         borderWidth: 2,
         borderBottomWidth: 2,
         borderRadius: 25,

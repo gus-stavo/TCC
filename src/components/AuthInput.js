@@ -2,6 +2,7 @@ import React from 'react'
 import{ View, TextInput, StyleSheet } from 'react-native'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import commonStyles from '../commonStyles'
 
 export default props =>{
     return(
@@ -16,21 +17,21 @@ const styles = StyleSheet.create({
     container:{
         width:'90%',
         height:40,
-        backgroundColor:'#eee',
+        backgroundColor: commonStyles.cores.branco,
         borderRadius:20,
         flexDirection:'row',
         alignItems:'center',
         borderWidth: 1,
-        borderColor:'#222',
+        borderColor:commonStyles.cores.preto,
         elevation: 3,
     },
     icon:{
-        color:'#222',
+        color:commonStyles.cores.preto,
         marginLeft:20
     },
     input:{
         marginLeft:20,
         width:'100%',
-        color: '#222',
+        color: commonStyles.cores.preto,
     }
 })

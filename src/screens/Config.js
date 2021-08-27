@@ -3,6 +3,7 @@ import{View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import Header from '../components/Header'
+import commonStyles from '../commonStyles'
 
 export default class Configs extends Component {
 
@@ -46,13 +47,13 @@ const styles = StyleSheet.create({
         flex: 1,
         //width: '100%',
         //height: '100%',
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         //backgroundColor: '#EEE',
     },
     clicavel: {
         flexDirection: 'row',
         margin: 10,
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         borderWidth: 2,
         borderBottomWidth: 2,
         borderRadius: 10,
@@ -75,6 +76,6 @@ const styles = StyleSheet.create({
         paddingLeft: 15,
         fontWeight: 'bold',
         fontSize: 30,
-        color: '#222',
+        color: commonStyles.cores.preto,
     }
 })

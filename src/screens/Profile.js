@@ -5,6 +5,8 @@ import Header from '../components/Header'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import commonStyles from '../commonStyles'
+
 const initialState = {
     name:'',
     cep:'',
@@ -120,10 +122,10 @@ export default class Profile extends Component{
 const styles = StyleSheet.create({
     container: { 
         flex: 1,
-        backgroundColor: '#eee'
+        backgroundColor: commonStyles.cores.branco
     },
     containerTop: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         borderBottomWidth: 1,
         elevation: 5
     },
@@ -136,7 +138,7 @@ const styles = StyleSheet.create({
         height: 150,
         width: 150,
         borderRadius: 75,
-        backgroundColor: '#222',
+        backgroundColor: commonStyles.cores.preto,
     },
     containerIcon: {
         padding: 15,
@@ -150,25 +152,25 @@ const styles = StyleSheet.create({
         marginTop: 50,
         fontFamily: 'Exo2-Medium', 
         fontSize: 20,
-        color: '#222',
+        color: commonStyles.cores.preto,
     },
     containerBtn: {
         alignItems: 'center',
         marginBottom: 50,
     },
     btn: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         padding: 10,
         width: 180,
         borderRadius: 10,
         borderWidth: 1,
-        borderColor: '#222',
+        borderColor: commonStyles.cores.preto,
         alignItems: 'center',
         elevation: 5
     },
     btnText:{
         fontSize: 20,
-        color: '#222',     
+        color: commonStyles.cores.preto,     
         fontFamily: 'Exo2-Medium' 
     },
     nickname:{
@@ -186,7 +188,7 @@ const styles = StyleSheet.create({
         borderBottomWidth:1,
         width:300,
         padding:10,
-        color:'black'
+        color:commonStyles.cores.preto
     },
     editText:{
         marginTop: 20,

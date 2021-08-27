@@ -3,6 +3,8 @@ import {View, Text, StyleSheet, TextInput, TouchableOpacity, Switch, TouchableHi
 import { Avatar } from 'react-native-elements'
 import {Picker} from '@react-native-picker/picker'
 
+import commonStyles from '../commonStyles'
+
 const initialState = {
     problema: 'Escolha',
     switchValue: false,
@@ -81,13 +83,13 @@ export default class Contact extends Component{
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%'
       },
       mainContainer: {
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         width: '87%',
         height: '92%',
         borderWidth: 0.5,
@@ -105,7 +107,7 @@ const styles = StyleSheet.create({
         height: 150,
         width: 150,
         borderRadius: 75,
-        backgroundColor: '#222',
+        backgroundColor: commonStyles.cores.preto,
     },
     inputAtividade:{
         marginVertical: 5,

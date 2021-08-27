@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Switch } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
 
 import Header from '../components/Header'
+import commonStyles from '../commonStyles'
 
 export default class Config extends Component {
 
@@ -60,7 +61,7 @@ export default class Config extends Component {
 const styles = StyleSheet.create({
 
   container: {
-    backgroundColor: 'rgba(111, 222, 552, 1)',
+    backgroundColor: commonStyles.cores.azul,
     justifyContent: 'center',
     alignItems: 'center',
     height: '100%'

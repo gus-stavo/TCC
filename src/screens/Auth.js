@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native'
  
 import AuthInput from '../components/AuthInput'
+import commonStyles from '../commonStyles'
 
 const initialState = {
         name:'',
@@ -113,13 +114,13 @@ export default class Auth extends Component {
 
 const styles = StyleSheet.create({
     background: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         justifyContent: 'center',
         alignItems: 'center',
         height: '100%'
       },
       formContainer: {
-        backgroundColor: '#EEE',
+        backgroundColor: commonStyles.cores.branco,
         width: '87%',
         height: '92%',
         borderWidth: 0.5,
@@ -138,7 +139,7 @@ const styles = StyleSheet.create({
         fontSize: 70,
         marginBottom: 10,
         fontFamily: "Exo2-SemiBoldItalic",
-        color: '#222',
+        color: commonStyles.cores.preto,
     },
     // formContainer: {
     //     backgroundColor: '#eee',
@@ -153,7 +154,7 @@ const styles = StyleSheet.create({
     subTitle: {
         fontSize: 20,
         textAlign: 'center',
-        color: '#222',
+        color: commonStyles.cores.preto,
         marginBottom: 10,
         fontFamily: 'Exo2-Medium'
     },
@@ -161,19 +162,19 @@ const styles = StyleSheet.create({
         marginTop: 10,
     },
     button: {
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
         marginTop: 20,
         marginBottom: 10,
         padding: 10,
         alignItems: 'center',
         borderRadius: 10,
-        borderColor: '#222',
+        borderColor: commonStyles.cores.preto,
         width: 120,
         borderWidth: 1,
         elevation: 5
     },
     buttonText: {
-        color: '#222',
+        color: commonStyles.cores.preto,
         fontSize: 20,
         fontFamily: 'Exo2-Medium'
     },
@@ -189,6 +190,6 @@ const styles = StyleSheet.create({
     textButtonTitle: {
         fontSize: 20,
         fontFamily: 'Exo2-Medium',
-        color: '#222',
+        color: commonStyles.cores.preto,
     }  
 })

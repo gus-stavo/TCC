@@ -6,6 +6,8 @@ import { Avatar } from 'react-native-elements'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import commonStyles from '../commonStyles'
+
 export default props => {
 
     const logout = () => {
@@ -59,8 +61,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderBottomWidth: 3,
-        borderColor: 'rgba(111, 222, 552, 1)',
-        backgroundColor: '#eee'
+        borderColor: commonStyles.cores.azul,
+        backgroundColor: commonStyles.cores.branco
     },
     avatar: {
         height: 80,
@@ -69,7 +71,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginLeft: 10,
         marginBottom: 10,
-        backgroundColor: '#222',
+        backgroundColor: commonStyles.cores.preto,
     },
     infos: {
         flex:1,
@@ -80,7 +82,7 @@ const styles = StyleSheet.create({
     },
     name: {
         fontFamily: 'Exo2-SemiBold',
-        color: '#222',
+        color: commonStyles.cores.preto,
         fontSize: 20
 
     },
@@ -91,7 +93,7 @@ const styles = StyleSheet.create({
     },
     iconText: {
         fontFamily: 'Exo2-SemiBold',
-        color: '#222',
+        color: commonStyles.cores.preto,
         marginLeft: 10,
         fontSize: 15
     }  

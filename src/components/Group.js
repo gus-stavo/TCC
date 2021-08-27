@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, StyleSheet, TouchableOpacity, Dimensions } from 'react-native'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import commonStyles from '../commonStyles'
 
 export default class Group extends React.Component {
     render() {
@@ -22,10 +23,10 @@ const styles = StyleSheet.create({
         height: (Dimensions.get('window').width / 10) * 4,
         margin: 10,
         borderWidth: 1,
-        borderColor: '#222',
+        borderColor: commonStyles.cores.preto,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#eee',
+        backgroundColor: commonStyles.cores.branco,
         borderRadius: 25,
         elevation: 10
     },
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 15,
         fontFamily: 'Exo2-SemiBold',
-        color: '#222',
+        color: commonStyles.cores.preto,
         textAlign: 'center'
     }
 })

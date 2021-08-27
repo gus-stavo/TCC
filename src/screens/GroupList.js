@@ -4,6 +4,7 @@ import { View, FlatList, StyleSheet } from 'react-native'
 import Header from '../components/Header'
 import Group from '../components/Group'
 import Groups from '../Groups'
+import commonStyles from '../commonStyles'
 
 export default class GroupList extends Component {
 
@@ -40,6 +41,6 @@ const styles = StyleSheet.create({
     list: {
         flex: 1,
         alignItems: 'center',
-        backgroundColor: 'rgba(111, 222, 552, 1)'
+        backgroundColor: commonStyles.cores.azul
     }
 })

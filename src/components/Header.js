@@ -2,6 +2,7 @@ import React from 'react'
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 
 import Icon from 'react-native-vector-icons/EvilIcons'
+import commonStyles from '../commonStyles'
 
 export default class Header extends React.Component {
     render() {
@@ -22,10 +23,10 @@ export default class Header extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#eee',
+        backgroundColor: commonStyles.cores.branco,
         padding: 5,
         borderBottomWidth: 1,
-        borderColor: '#222',
+        borderColor: commonStyles.cores.preto,
         width: '100%',
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
         
     },
     title:{
-        color: '#222',
+        color: commonStyles.cores.preto,
         fontFamily: 'Exo2-SemiBold',
         fontSize: 30,
         padding: 5,

@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createStackNavigator } from '@react-navigation/stack'
 import { createDrawerNavigator } from '@react-navigation/drawer'
-
+import commonStyles from './commonStyles'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import GroupList from './screens/GroupList'
@@ -89,17 +89,17 @@ const ScreenNavigator = () => {
         <Drawer.Navigator initialRouteName='Home' 
             drawerPosition='right' 
             drawerStyle={{
-                backgroundColor: '#eee',
+                backgroundColor: commonStyles.cores.branco,
                 height: 275,
                 borderRadius: 10,
-                borderColor: '#222',
+                borderColor: commonStyles.cores.preto,
                 borderWidth: 1,
                 elevation: 10,
             }}
             drawerContentOptions={{
-                activeTintColor: 'rgba(111, 222, 552, 1)',
+                activeTintColor: commonStyles.cores.azul,
                 labelStyle:{
-                    color:'#222',
+                    color:commonStyles.cores.preto,
                     fontFamily:'Exo2-Medium',
                 },
             }}
@@ -132,7 +132,7 @@ export default Navigator
 
 const styles = StyleSheet.create({
     containerTab: {
-        backgroundColor: '#eee',
+        backgroundColor: commonStyles.cores.branco,
         elevation: 5,
     }
 })
