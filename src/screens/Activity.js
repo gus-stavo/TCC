@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import { StyleSheet, Alert, Modal, Pressable, Text, Image, View, Linking, ScrollView } from 'react-native'
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
 import commonStyles from '../commonStyles'
 
 const initialState = {
-  modalVisible: false,
+    modalVisible: false,
 }
 
 export default class Activity extends Component {

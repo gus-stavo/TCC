@@ -6,12 +6,12 @@ import Icon from 'react-native-vector-icons/EvilIcons'
 export default class Header extends React.Component {
     render() {
         return (
-            <View style={styles.container}>
-                <View style={styles.containerTitle}>
-                    <Text style={styles.title}>{this.props.name}</Text>
+            <View style={styles.container} >
+                <View style={styles.containerTitle} >
+                    <Text style={styles.title} >{this.props.name}</Text>
                 </View>
-                <View style={styles.button}>
-                    <TouchableOpacity onPress={() => {this.props.openDrawer()}}>
+                <View style={styles.button} >
+                    <TouchableOpacity onPress={() => {this.props.openDrawer()}} >
                         <Icon name='navicon' size={50} color='#222' /> 
                     </TouchableOpacity>
                 </View>    
