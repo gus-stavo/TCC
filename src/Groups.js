@@ -18,7 +18,7 @@ export default [
     }, {
         id: 4,
         name: 'Corrida',
-        iconiconName: 'run-fast'
+        icon: 'run-fast'
     }, {
         id: 5,
         name: 'Jogos eletrônicos',

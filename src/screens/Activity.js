@@ -65,7 +65,7 @@ export default class Activity extends Component {
           {/* <Image
             style={styles.ativImage}
             source={require('./assets/favicon.png')} /> */}
-          <Pressable>
+          <Pressable onPress={() => {}}>
             <View style={styles.buttons}>
               <Icon size={40} style={styles.iconStyle} name='calendar-month-outline'></Icon>
               <Text style={styles.textButton}>20/10/2021</Text>
