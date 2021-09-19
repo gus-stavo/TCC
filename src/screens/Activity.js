@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { StyleSheet, Alert, Modal, Pressable, Text, Image, View, Linking, ScrollView } from 'react-native'
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+
 import commonStyles from '../commonStyles'
 
 const initialState = {
@@ -38,7 +40,7 @@ export default class Activity extends Component {
                     <Pressable>
                       <View style={styles.memberView}>
                         <View style={styles.member}>
-                        <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
+                          <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
                           <View>
                             <Text style={styles.title}>Futebol</Text>
                             <Text style={styles.description}>Membro</Text>
@@ -50,7 +52,7 @@ export default class Activity extends Component {
                       </View>
                     </Pressable>
                   </View>
-                  
+
                 </ScrollView>
                 <Pressable onPress={() => this.setState({ modalVisible: !this.state.modalVisible })}>
                   <View style={styles.modalButton}>
@@ -59,9 +61,10 @@ export default class Activity extends Component {
                 </Pressable>
               </View>
             </View>
-          </Modal>          
-            <Image style={styles.ativImage} source={require('../../assets/images/avatar.jpg')} />
+          </Modal>
+          <Image style={styles.ativImage} source={require('../../assets/images/avatar.jpg')} />
           <Pressable>
+
             <View style={styles.buttons}>
               <Icon size={40} style={styles.iconStyle} name='calendar-month-outline'></Icon>
               <Text style={styles.textButton}>20/10/2021</Text>
@@ -239,12 +242,12 @@ const styles = StyleSheet.create({
     elevation: commonStyles.buttons.elevation,
     justifyContent: 'center',
   },
-  memberView:{
+  memberView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 10
   },
-  member:{
+  member: {
     flexDirection: 'row',
     alignItems: 'center'
   },

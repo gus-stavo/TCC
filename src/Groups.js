@@ -2,42 +2,42 @@ export default [
     {
         id: 0,
         name: 'Ciclismo',
-        iconName: 'bike'
+        icon: 'bike'
     }, {
         id: 1,
         name: 'Tênis',
-        iconName: 'tennis'
+        icon: 'tennis'
     }, {
         id: 2,
         name: 'Futebol',
-        iconName: 'soccer'
+        icon: 'soccer'
     }, {
         id: 3,
         name: 'Tênis de mesa',
-        iconName: 'table-tennis'
+        icon: 'table-tennis'
     }, {
         id: 4,
         name: 'Corrida',
-        iconName: 'run-fast'
+        icon: 'run-fast'
     }, {
         id: 5,
         name: 'Jogos eletrônicos',
-        iconName: 'google-controller'
+        icon: 'google-controller'
     }, {
         id: 6,
         name: 'Pets',
-        iconName: 'dog-service'
+        icon: 'dog-service'
     }, {
         id: 8,
         name: 'Acampamento',
-        iconName: 'summit'
+        icon: 'summit'
     }, {
         id: 9,
         name: 'Pescaria',
-        iconName: 'fish'
+        icon: 'fish'
     }, {
         id: 10,
         name: 'Skate',
-        iconName: 'skateboard'
+        icon: 'skateboard'
     }
 ]
