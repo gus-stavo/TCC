@@ -16,13 +16,13 @@ export default class ActivityList extends Component {
   render() {
 
     return (
-      <View style={styles.container}>
+      <View style={styles.background}>
         <ScrollView style={styles.scrollStyles}>
           <View style={styles.containerButton}>
             <Pressable onPress={() => {this.props.navigation.navigate('Atividade')}}>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
+                  <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Dono</Text>
@@ -39,7 +39,7 @@ export default class ActivityList extends Component {
             <Pressable>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
+                <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Membro</Text>
@@ -56,7 +56,7 @@ export default class ActivityList extends Component {
             <Pressable>
               <View style={styles.buttonView}>
                 <View style={styles.button}>
-                  {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
+                <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
                   <View>
                     <Text style={styles.title}>Futebol</Text>
                     <Text style={styles.description}>Membro</Text>
@@ -111,30 +111,32 @@ export default class ActivityList extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     backgroundColor: commonStyles.cores.azul,
+    justifyContent: 'center',
     alignItems: 'center',
     height: '100%'
   },
   scrollStyles: {
-    width: '87%',
+    width: commonStyles.containerWhite.width,
     marginVertical: 25
   },
   containerButton: {
     backgroundColor: commonStyles.cores.branco,
     marginBottom: 15,
-    borderWidth: 0.5,
-    borderRadius: 30,
+    borderWidth: commonStyles.buttons.borderWidth,
+    borderRadius: commonStyles.buttons.borderRadius,
     height: 60,
     justifyContent: 'center',
     shadowColor: commonStyles.cores.preto,
+    shadowColor: commonStyles.cores.preto,
     shadowOffset: {
-      width: 0,
-      height: 4
+      width: commonStyles.buttons.shadowOffset.width,
+      height: commonStyles.buttons.shadowOffset.height
     },
-    shadowOpacity: 0.4,
-    shadowRadius: 2,
-    elevation: 5
+    shadowOpacity: commonStyles.buttons.shadowOpacity,
+    shadowRadius: commonStyles.buttons.shadowRadius,
+    elevation: commonStyles.buttons.elevation
   },
   buttonView: {
     flexDirection: 'row',
@@ -203,27 +205,27 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+
+    
   },
   modalButton: {
+    marginHorizontal: commonStyles.exitButton.marginHorizontal,
+    marginTop: 30,
+    marginBottom: 25,
     borderWidth: 0.5,
-    borderRadius: 25,
+    borderRadius: 10,
+    height: 40,
     backgroundColor: commonStyles.cores.azul,
-    justifyContent: 'center',
     alignItems: 'center',
-    marginVertical: 40,
-    marginHorizontal: 20,
-    width: 100,
-    height: 50,
+    justifyContent: 'center',
     shadowColor: commonStyles.cores.preto,
     shadowOffset: {
       width: 0,
       height: 3
     },
-    shadowOpacity: 0.4,
-    shadowRadius: 3,
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
     elevation: 5
 
   }
 })
-
-//oi

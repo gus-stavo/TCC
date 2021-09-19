@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native'
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer'
 import { CommonActions } from '@react-navigation/native'
 import { Avatar } from 'react-native-elements'
+import commonStyles from '../commonStyles'
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -59,8 +60,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         borderBottomWidth: 3,
-        borderColor: 'rgba(111, 222, 552, 1)',
-        backgroundColor: '#eee'
+        borderColor: commonStyles.cores.preto,
+        backgroundColor: commonStyles.cores.branco
     },
     avatar: {
         height: 80,

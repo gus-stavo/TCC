@@ -15,8 +15,8 @@ export default class Activity extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <View style={styles.mainContainer}>
+      <View style={styles.background}>
+        <View style={styles.backgroundWhite}>
           <Modal
             animationType="fade"
             transparent={true}
@@ -38,7 +38,7 @@ export default class Activity extends Component {
                     <Pressable>
                       <View style={styles.memberView}>
                         <View style={styles.member}>
-                          {/* <Image style={styles.avatar} source={require('./assets/favicon.png')} /> */}
+                        <Image style={styles.avatar} source={require('../../assets/images/avatar.jpg')} />
                           <View>
                             <Text style={styles.title}>Futebol</Text>
                             <Text style={styles.description}>Membro</Text>
@@ -59,10 +59,8 @@ export default class Activity extends Component {
                 </Pressable>
               </View>
             </View>
-          </Modal>
-          {/* <Image
-            style={styles.ativImage}
-            source={require('./assets/favicon.png')} /> */}
+          </Modal>          
+            <Image style={styles.ativImage} source={require('../../assets/images/avatar.jpg')} />
           <Pressable>
             <View style={styles.buttons}>
               <Icon size={40} style={styles.iconStyle} name='calendar-month-outline'></Icon>
@@ -99,20 +97,19 @@ export default class Activity extends Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     backgroundColor: commonStyles.cores.azul,
     justifyContent: 'center',
     alignItems: 'center',
-    height: '100%',
-    //teste
+    height: '100%'
   },
-  mainContainer: {
+  backgroundWhite: {
     backgroundColor: commonStyles.cores.branco,
-    width: '87%',
-    height: '92%',
-    borderWidth: 0.5,
-    borderRadius: 10,
-    elevation: 50
+    width: commonStyles.containerWhite.width,
+    height: commonStyles.containerWhite.height,
+    borderWidth: commonStyles.containerWhite.borderBottomWidth,
+    borderRadius: commonStyles.containerWhite.borderRadius,
+    elevation: commonStyles.containerWhite.elevation
   },
   ativImage: {
     width: 'auto',
@@ -122,8 +119,8 @@ const styles = StyleSheet.create({
     borderRadius: 10
   },
   iconStyle: {
-    width: 40,
-    height: 40,
+    width: commonStyles.iconsSize.width,
+    height: commonStyles.iconsSize.height,
     marginLeft: 5,
     color: commonStyles.cores.preto
   },
@@ -169,26 +166,26 @@ const styles = StyleSheet.create({
     paddingLeft: '25%',
   },
   buttons: {
-    margin: 20,
-    marginTop: 15,
-    marginBottom: 0,
-    height: 50,
-    borderWidth: 0.5,
-    borderRadius: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
+    marginHorizontal: commonStyles.buttons.marginHorizontal,
+    marginTop: commonStyles.buttons.marginTop,
+    marginBottom: commonStyles.buttons.marginBottom,
+    height: commonStyles.buttons.height,
+    borderWidth: commonStyles.buttons.borderWidth,
+    borderRadius: commonStyles.buttons.borderRadius,
+    flexDirection: commonStyles.buttons.flexDirection,
+    alignItems: commonStyles.buttons.alignItems,
     backgroundColor: commonStyles.cores.branco,
     shadowColor: commonStyles.cores.preto,
     shadowOffset: {
-      width: 0,
-      height: 3
+      width: commonStyles.buttons.shadowOffset.width,
+      height: commonStyles.buttons.shadowOffset.height
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
-    elevation: 5
+    shadowOpacity: commonStyles.buttons.shadowOpacity,
+    shadowRadius: commonStyles.buttons.shadowRadius,
+    elevation: commonStyles.buttons.elevation
   },
   button: {
-    margin: 70,
+    marginHorizontal: commonStyles.exitButton.marginHorizontal,
     marginTop: 25,
     marginBottom: 0,
     borderWidth: 0.5,
@@ -207,13 +204,12 @@ const styles = StyleSheet.create({
     elevation: 5
   },
   modalButton: {
+    marginHorizontal: commonStyles.exitButton.marginHorizontal,
+    marginTop: 15,
+    marginBottom: 25,
     borderWidth: 0.5,
-    borderRadius: 20,
+    borderRadius: 10,
     height: 40,
-    margin: '25%',
-    marginBottom: 20,
-    width: '50%',
-    marginTop: 10,
     backgroundColor: commonStyles.cores.azul,
     alignItems: 'center',
     justifyContent: 'center',
@@ -222,26 +218,26 @@ const styles = StyleSheet.create({
       width: 0,
       height: 3
     },
-    shadowOpacity: 0.2,
+    shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5
   },
   containerMember: {
     backgroundColor: commonStyles.cores.branco,
     marginBottom: 15,
-    borderWidth: 0.5,
-    borderRadius: 30,
-    marginHorizontal: 20,
-    height: 50,
-    justifyContent: 'center',
+    borderWidth: commonStyles.buttons.borderWidth,
+    borderRadius: commonStyles.buttons.borderRadius,
+    marginHorizontal: commonStyles.buttons.marginHorizontal,
+    height: commonStyles.buttons.height,
     shadowColor: commonStyles.cores.preto,
     shadowOffset: {
-      width: 0,
-      height: 4
+      width: commonStyles.buttons.shadowOffset.width,
+      height: commonStyles.buttons.shadowOffset.height
     },
-    shadowOpacity: 0.2,
-    shadowRadius: 2,
-    elevation: 5
+    shadowOpacity: commonStyles.buttons.shadowOpacity,
+    shadowRadius: commonStyles.buttons.shadowRadius,
+    elevation: commonStyles.buttons.elevation,
+    justifyContent: 'center',
   },
   memberView:{
     flexDirection: 'row',

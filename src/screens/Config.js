@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import{View, Text, StyleSheet, TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 
+import commonStyles from '../commonStyles'
+
 import Header from '../components/Header'
 
 export default class Configs extends Component {
@@ -16,26 +18,24 @@ export default class Configs extends Component {
                 <View>
                     <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
                 </View>
-                <View style={styles.containerBox}>
-                    <TouchableOpacity onPress={() => {this.props.navigation.navigate('Aparência')}} style={[styles.clicavel, {marginTop: 20}]}>
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Aparência')}}>
+                    <View style={[styles.clicavel, {marginTop: 15}]}>
                         <Icon name="white-balance-sunny" size={40}></Icon>
                         <Text style={styles.texto}>Aparência</Text>
-                    </TouchableOpacity>   
-                </View>
-
-                <View style={styles.containerBox}>
-                    <TouchableOpacity onPress={() => {this.props.navigation.navigate('Conta')}} style={styles.clicavel}>
+                    </View>
+                </TouchableOpacity>   
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Conta')}}>
+                    <View style={styles.clicavel}>
                         <Icon name="account" size={40} color="#222" />
                         <Text style={styles.texto}>Conta</Text>
-                    </TouchableOpacity>   
-                </View>
-
-                <View style={styles.containerBox}>
-                    <TouchableOpacity onPress={() => {this.props.navigation.navigate('Sobre')}} style={styles.clicavel}>
+                    </View>
+                </TouchableOpacity>   
+                <TouchableOpacity onPress={() => {this.props.navigation.navigate('Sobre')}}>
+                    <View style={styles.clicavel}>
                         <Icon name="information-outline" size={40} color="#222" />
                         <Text style={styles.texto}>Sobre</Text>
-                    </TouchableOpacity>
-                </View>
+                    </View>
+                </TouchableOpacity>
             </View>
         )
     }
@@ -44,37 +44,32 @@ export default class Configs extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        //width: '100%',
-        //height: '100%',
         backgroundColor: 'rgba(111, 222, 552, 1)',
-        //backgroundColor: '#EEE',
     },
     clicavel: {
         flexDirection: 'row',
-        margin: 10,
-        backgroundColor: '#EEE',
-        borderWidth: 2,
-        borderBottomWidth: 2,
-        borderRadius: 10,
-        height: 80,
+        backgroundColor: commonStyles.cores.branco,
+        borderWidth: commonStyles.buttons.borderWidth,
+        borderRadius: commonStyles.buttons.borderRadius,
+        height: 60,
         alignItems: 'center',
+        shadowColor: commonStyles.cores.preto,
+        shadowColor: commonStyles.cores.preto,
+        shadowOffset: {
+          width: commonStyles.buttons.shadowOffset.width,
+          height: commonStyles.buttons.shadowOffset.height
+        },
+        shadowOpacity: commonStyles.buttons.shadowOpacity,
+        shadowRadius: commonStyles.buttons.shadowRadius,
+        elevation: commonStyles.buttons.elevation,
+        marginBottom: 15,   
         paddingLeft: 12,
-        marginTop: 10,
-        //width: '60%',
-        //marginLeft: 'auto',
-        //marginRight: 'auto',
-
-        
-    },
-    containerBox: {
-        
-        
-        
+        marginHorizontal: 25
     },
     texto: {
         paddingLeft: 15,
         fontWeight: 'bold',
         fontSize: 30,
         color: '#222',
-    }
+    },
 })

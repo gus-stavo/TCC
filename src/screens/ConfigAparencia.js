@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, StyleSheet, Switch } from 'react-native'
 import { Picker } from '@react-native-picker/picker'
+import commonStyles from '../commonStyles'
 
 import Header from '../components/Header'
 
@@ -8,13 +9,13 @@ export default class Config extends Component {
 
   openDrawer = () => {
     this.props.navigation.openDrawer()
-}
+  }
 
   openActivities = props => {
     this.props.navigation.navigate('Configurações')
   }
   state = {
-    switchValue: false,    
+    switchValue: false,
     Problema: '',
   }
   toggleSwitch = (value) => {
@@ -23,24 +24,22 @@ export default class Config extends Component {
 
   render() {
     return (
-
-      <View style={styles.container}>
-        <View>
-          <Header name={this.props.route.name} openDrawer={() => {this.openDrawer()}} />
-        </View>
-        <View style={styles.containerBox}>
-          <View style={styles.containerItem}>
-            <Text style={styles.titulo}>Tema escuro</Text>
-            <Switch onValueChange={this.toggleSwitch} value={this.state.switchValue} />
-          </View>
-          <View style={styles.containerItem}>
-            <Text style={styles.titulo}>Estilo</Text>
+      <View>
+        <Header name={this.props.route.name} openDrawer={() => { this.openDrawer() }} />
+        <View style={styles.container}>
+          <View style={styles.containerBox}>
+            <View style={styles.containerItem}>
+              <Text style={styles.titulo}>Tema escuro</Text>
+              <Switch onValueChange={this.toggleSwitch} value={this.state.switchValue} />
+            </View>
+            <View style={styles.containerItem}>
+              <Text style={styles.titulo}>Estilo</Text>
               <Picker
                 mode='dropdown'
                 style={styles.pickerView}
                 selectedValue={this.state.problem}
                 onValueChange={(itemValue) =>
-                  this.setState({ problem: itemValue})
+                  this.setState({ problem: itemValue })
                 }
                 placeholder='Selecione'>
 
@@ -50,9 +49,11 @@ export default class Config extends Component {
                 <Picker.Item label="Basquete" value="Basquete" />
                 <Picker.Item label="Caminhada" value="Caminhada" />
               </Picker>
+            </View>
           </View>
         </View>
       </View>
+
     )
   }
 }
@@ -60,17 +61,17 @@ export default class Config extends Component {
 const styles = StyleSheet.create({
 
   container: {
-    backgroundColor: 'rgba(111, 222, 552, 1)',
+    backgroundColor: commonStyles.cores.azul,
     justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%'
+    alignItems: 'center'
   },
   containerBox: {
-    backgroundColor: '#FFF',
-    width: '87%',
-    height: '92%',
-    borderWidth: 0.5,
-    borderRadius: 10,
+    backgroundColor: commonStyles.cores.branco,
+    width: commonStyles.containerWhite.width,
+    height: commonStyles.containerWhite.height,
+    borderWidth: commonStyles.containerWhite.borderBottomWidth,
+    borderRadius: commonStyles.containerWhite.borderRadius,
+    elevation: commonStyles.containerWhite.elevation,
   },
   containerItem: {
     flexDirection: 'row',
@@ -89,7 +90,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     width: '50%',
     height: 30,
-    justifyContent: 'center',    
-    opacity: 1  
+    justifyContent: 'center',
+    opacity: 1
   },
 })
