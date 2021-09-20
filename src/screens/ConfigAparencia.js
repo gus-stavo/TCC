@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   pickerView: {
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderRadius: 20,
     width: '50%',
     height: 30,

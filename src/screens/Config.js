@@ -26,7 +26,7 @@ export default class Configs extends Component {
                 </TouchableOpacity>   
                 <TouchableOpacity onPress={() => {this.props.navigation.navigate('Conta')}}>
                     <View style={styles.clicavel}>
-                        <Icon name="account" size={40} color="#222" />
+                        <Icon name="account" size={40} />
                         <Text style={styles.texto}>Conta</Text>
                     </View>
                 </TouchableOpacity>   
@@ -44,7 +44,7 @@ export default class Configs extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'rgba(111, 222, 552, 1)',
+        backgroundColor: commonStyles.cores.azul,
     },
     clicavel: {
         flexDirection: 'row',
@@ -68,8 +68,7 @@ const styles = StyleSheet.create({
     },
     texto: {
         paddingLeft: 15,
-        fontWeight: 'bold',
-        fontSize: 30,
-        color: '#222',
+        fontSize: 20,
+        color: commonStyles.cores.preto,
     },
 })

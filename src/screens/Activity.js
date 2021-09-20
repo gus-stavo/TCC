@@ -52,7 +52,6 @@ export default class Activity extends Component {
                       </View>
                     </Pressable>
                   </View>
-
                 </ScrollView>
                 <Pressable onPress={() => this.setState({ modalVisible: !this.state.modalVisible })}>
                   <View style={styles.modalButton}>
@@ -128,7 +127,7 @@ const styles = StyleSheet.create({
     color: commonStyles.cores.preto
   },
   textButton: {
-    marginLeft: 10,
+    marginHorizontal: 10,
     flex: 1,
     flexWrap: 'wrap'
   },

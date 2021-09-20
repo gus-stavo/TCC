@@ -9,7 +9,7 @@ export default class Group extends React.Component {
         return (
             <TouchableOpacity style={styles.container} onPress={() => { this.props.openActivities() }}>
                 <View style={styles.button}>
-                    <Icon name={this.props.iconName} size={70} color='#222' />
+                    <Icon name={this.props.iconName} size={70} />
                     <Text style={styles.title}>{this.props.name}</Text>
                 </View>
             </TouchableOpacity>
@@ -36,12 +36,13 @@ const styles = StyleSheet.create({
         padding: 20,
         justifyContent: 'center',
         alignItems: 'center',
+        color: commonStyles.cores.preto
     },
     title: {
         marginTop: 5,
         fontSize: 17,
         fontFamily: 'Exo2-SemiBold',
-        color: '#222',
+        color: commonStyles.cores.preto,
         textAlign: 'center'
     }
 })
