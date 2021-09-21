@@ -87,11 +87,6 @@ export default class Activity extends Component {
               <Text style={styles.textButton}>Descrição</Text>
             </View>
           </Pressable>
-          <Pressable>
-            <View style={styles.button}>
-              <Text>Sair</Text>
-            </View>
-          </Pressable>
         </View>
       </View>
     )

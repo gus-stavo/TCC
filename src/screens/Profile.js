@@ -35,10 +35,6 @@ export default class Profile extends Component {
     this.props.onSave(this.editedProfile);
   };
 
-  editedProfile = () => {
-    Alert.alert('Editado com sucesso');
-  };
-
   buscaCep = async () => {
     let response = await fetch(
       `https://viacep.com.br/ws/${this.state.cep}/json/`,
@@ -57,6 +53,18 @@ export default class Profile extends Component {
   openDrawer = () => {
     this.props.navigation.openDrawer();
   };
+
+  editModeM = () => {
+
+    if(!this.state.editMode) {
+      this.setState({editMode: !this.state.editMode})
+      
+    }
+    else {
+      this.setState({editMode: !this.state.editMode})
+      Alert.alert('Editado com sucesso');
+    }
+  }
 
   render() {
     return (
@@ -79,11 +87,25 @@ export default class Profile extends Component {
               titleStyle={{color: '#eee'}}
             />
           </View>
-          <View style={styles.containerIcon}>
-            <TouchableOpacity
-              onPress={() => this.setState({editMode: !this.state.editMode})}>
-              <Icon name="account-edit-outline" size={40} color="#222" />
-            </TouchableOpacity>
+          <View style={[styles.containerIcon, {justifyContent: this.state.editMode ? 'space-between' : 'flex-end'}]}>
+            {!this.state.editMode && (
+              <TouchableOpacity
+                onPress={this.editModeM}>
+                <Icon name="account-edit-outline" size={40} color="#222" />
+              </TouchableOpacity>
+            )}
+            {this.state.editMode && (
+              <>
+                <TouchableOpacity
+                  onPress={() => {this.setState({editMode: !this.state.editMode})}}>
+                  <Icon name="close" size={40} color="#222" />
+                </TouchableOpacity>
+                <TouchableOpacity
+                  onPress={this.editModeM}>
+                  <Icon name="check" size={40} color="#222" />
+                </TouchableOpacity>
+              </>
+            )}
           </View>
         </View>
         <ScrollView>
@@ -173,13 +195,6 @@ export default class Profile extends Component {
               {this.state.number}
             </TextInput>
           </View>
-          {this.state.editMode && (
-            <View style={styles.containerBtn}>
-              <TouchableOpacity onPress={this.editedProfile} style={styles.btn}>
-                <Text style={styles.btnText}>Salvar Mudanças</Text>
-              </TouchableOpacity>
-            </View>
-          )}
         </ScrollView>
       </View>
     );
@@ -208,8 +223,8 @@ const styles = StyleSheet.create({
     backgroundColor: commonStyles.cores.preto,
   },
   containerIcon: {
+    flexDirection: 'row',
     padding: 15,
-    alignItems: 'flex-end',
   },
   containerInfo: {
     marginHorizontal: commonStyles.buttons.marginHorizontal,

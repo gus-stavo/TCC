@@ -9,7 +9,7 @@ export default class Group extends React.Component {
         return (
             <TouchableOpacity style={styles.container} onPress={() => { this.props.openActivities() }}>
                 <View style={styles.button}>
-                    <Icon name={this.props.iconName} size={70} />
+                    <Icon name={this.props.icon} size={70} />
                     <Text style={styles.title}>{this.props.name}</Text>
                 </View>
             </TouchableOpacity>

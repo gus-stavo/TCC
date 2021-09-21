@@ -14,6 +14,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Header from '../components/Header';
 
+const initialState = {
+  isVisible: false,
+  swapModalTitle: false
+}
+
 export default class Config extends Component {
   openDrawer = () => {
     this.props.navigation.openDrawer();
@@ -22,14 +27,16 @@ export default class Config extends Component {
   openActivities = props => {
     this.props.navigation.navigate('Configurações');
   };
-  constructor(props) {
-    super(props);
-    this.state = {isVisible: false};
-    this.state = {swapModalTitle: false};
+  
+  state = {
+    ...initialState
   }
 
   render() {
+
+
     const swapModalTitle = this.state.swapModalTitle;
+
     return (
       <View>
         <Header
