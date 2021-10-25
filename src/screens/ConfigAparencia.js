@@ -32,24 +32,6 @@ export default class Config extends Component {
               <Text style={styles.titulo}>Tema escuro</Text>
               <Switch onValueChange={this.toggleSwitch} value={this.state.switchValue} />
             </View>
-            <View style={styles.containerItem}>
-              <Text style={styles.titulo}>Estilo</Text>
-              <Picker
-                mode='dropdown'
-                style={styles.pickerView}
-                selectedValue={this.state.problem}
-                onValueChange={(itemValue) =>
-                  this.setState({ problem: itemValue })
-                }
-                placeholder='Selecione'>
-
-                <Picker.Item label="Arial" value="Arial" />
-                <Picker.Item label="Pesca" value="Pesca" />
-                <Picker.Item label="Esgrima" value="Esgrima" />
-                <Picker.Item label="Basquete" value="Basquete" />
-                <Picker.Item label="Caminhada" value="Caminhada" />
-              </Picker>
-            </View>
           </View>
         </View>
       </View>

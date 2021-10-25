@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     },
     list: {
         flex: 1,
-        paddingVertical: 20,
+        paddingTop: 20,
         alignItems: 'center',
         backgroundColor: commonStyles.cores.azul
     }
